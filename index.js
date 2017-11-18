@@ -14,9 +14,9 @@ app.get('/chao/:name/:age', (req, res) => {
     res.render('chao', { name, age })
 });
 
-// app.use((err, req, res, next) => {
-//     res.render('loi');
-// });
+app.use((err, req, res, next) => {
+    res.render('loi', { err });
+});
 
 app.listen(3000, () => console.log('Server started!'));
 
