@@ -6,8 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-    <h3>EJS 123 456</h3>
-    <img src="a.png" alt="">
+        <%- include('./partials/header.ejs') %>
+        <%
+            const arrPerson = [
+                { name: 'ti', age: 10 },
+                { name: 'teo', age: 13 },
+                { name: 'tun', age: 12 },
+            ]
+        %>
+
+        <% arrPerson.forEach(person =>  { %>
+            <%- include('./partials/row.ejs', { person }) %>
+        <% }) %>
+
+        <% if (age > 18) { %>
+            <p>Ban da du tuoi</p>
+        <% } else { %>
+            <p>Ban chua du tuoi</p>
+        <% } %>
+        <%- include('./partials/footer.ejs') %>
     </body>
 </html>
 <script src="/reload/reload.js"></script>
